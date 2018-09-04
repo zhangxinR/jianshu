@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import logoPic from '../../statics/logo.png';
 
-//定义带样式的组件，组件样式独享，互相不影响
+//定义带样式的组件，组件样式独享，互相不影响.
 export const HeaderWrapper =styled.div`
     position:relative;
     height:58px;
