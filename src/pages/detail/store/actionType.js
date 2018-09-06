@@ -1,0 +1,1 @@
+export const Get_Detail='Detail/Get_Detail';
