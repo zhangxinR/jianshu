@@ -1,11 +1,11 @@
-import  React,{Component} from 'react';
+import  React,{PureComponent} from 'react';
 import { connect } from 'react-redux';
 import {
     TopicWrapper,
     TopicItem
 } from '../style'
 
-class Topic extends Component{
+class Topic extends PureComponent{
     render(){
         return (
             <TopicWrapper>
@@ -34,6 +34,4 @@ const mapStateToProps=(state)=>{
     }
 }
 
-const mapDispatchToProps=(dispatch)=>{}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Topic);
+export default connect(mapStateToProps)(Topic);
