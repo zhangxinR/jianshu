@@ -18,7 +18,7 @@ class List extends PureComponent{
                     articleList.map((item,index)=>{
                         //Link可以实现单页面跳转，节省性能。不能用a标签跳转，否则会多次加载HTML文件
                         return (
-                            <Link key={index} to="/detail">
+                            <Link key={index} to={"/detail/"+item.get('id')}>
                                 <ListItem>
                                 <img 
                                     src={item.get('imgUrl')} 

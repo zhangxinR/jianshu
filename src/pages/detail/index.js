@@ -1,4 +1,7 @@
 import  React,{PureComponent} from 'react';
+//由于detail组件被异步处理，不能直接获取路由中的参数
+//需要引入withRouter让detail有能力获取路由中的参数
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
     DetailWrapper,
@@ -10,6 +13,7 @@ import {
 } from './store';
 
 class Detail extends PureComponent{
+
     render(){
         const { title,content } = this.props;
         return (
@@ -20,11 +24,11 @@ class Detail extends PureComponent{
                 <Content dangerouslySetInnerHTML={{__html:content}} />
             </DetailWrapper>
         )
-    }
+    };
 
     componentDidMount(){
-        this.props.getDetail();
-    }
+        this.props.getDetail(this.props.match.params.id);
+    };
 }
 
 const mapStateToProps=(state)=>{
@@ -32,14 +36,14 @@ const mapStateToProps=(state)=>{
         title:state.getIn(['detail','title']),
         content:state.getIn(['detail','content'])
     }
-}
+};
 
 const maoDispatchToProps=(dispatch)=>{
     return {
-        getDetail(){
-            dispatch(actionCreators.getDetail())
+        getDetail(id){
+            dispatch(actionCreators.getDetail(id));
         }
     }
-}
+};
 
-export default connect(mapStateToProps,maoDispatchToProps)(Detail);
+export default connect(mapStateToProps,maoDispatchToProps)(withRouter(Detail));

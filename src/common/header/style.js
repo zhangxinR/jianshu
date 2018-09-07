@@ -3,6 +3,7 @@ import logoPic from '../../statics/logo.png';
 
 //定义带样式的组件，组件样式独享，互相不影响.
 export const HeaderWrapper =styled.div`
+    z-index:1;
     position:relative;
     height:58px;
     border-bottom:1px solid #f0f0f0;
@@ -29,6 +30,7 @@ export const NavItem=styled.div`
     padding:0 15px;
     font-size:17px;
     color:#333;
+    cursor:pointer;
     &.left {
         float:left;
     }

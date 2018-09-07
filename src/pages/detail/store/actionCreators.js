@@ -7,15 +7,15 @@ const getDetailAction=(data)=>{
         type:actionType.Get_Detail,
         data:fromJS(data)
     }
-}
+};
 
-export const getDetail=()=>{
+export const getDetail=(id)=>{
     return (dispatch)=>{
-        axios.get('/api/detail.json').then((res)=>{
+        axios.get('/api/detail.json?id='+id).then((res)=>{
             const data=res.data.data;
             dispatch(getDetailAction(data));
         }).catch((e)=>{
             console.log(e)
         })
     }
-}
+};
