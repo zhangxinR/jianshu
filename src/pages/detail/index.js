@@ -1,6 +1,6 @@
 import  React,{PureComponent} from 'react';
 //由于detail组件被异步处理，不能直接获取路由中的参数
-//需要引入withRouter让detail有能力获取路由中的参数
+//需要引入withRouter让detail有能力获取路由中的参数，创建一个连接到 Router 的新组件（借用 redux 术语）
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
